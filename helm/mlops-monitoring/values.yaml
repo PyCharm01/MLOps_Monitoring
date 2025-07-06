@@ -1,0 +1,14 @@
+replicaCount: 1
+
+image:
+  repository: your-ecr-repo/mlops-monitoring
+  pullPolicy: IfNotPresent
+  tag: "latest"
+
+service:
+  type: ClusterIP
+  port: 5000
+
+prometheus:
+  scrape: true
+  port: 8000

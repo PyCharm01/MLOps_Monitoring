@@ -1,0 +1,10 @@
+groups:
+  - name: drift-alerts
+    rules:
+      - alert: PSIHigh
+        expr: psi_score > 0.25
+        for: 5m
+        labels:
+          severity: critical
+        annotations:
+          summary: "PSI drift exceeded threshold"
